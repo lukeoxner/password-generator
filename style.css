@@ -14,7 +14,8 @@ body,
 
 body {
 	font-family: sans-serif;
-	background-color: #f9fbfd;
+	background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80);
+	background-size: auto;
 }
 
 .wrapper {
@@ -30,6 +31,11 @@ header {
 	color: hsl(206, 17%, 28%);
 }
 
+h1 {
+	font-family: 'Russo One', sans-serif;
+	color: white;
+}
+
 .card {
 	background-color: hsl(0, 0%, 100%);
 	border-radius: 5px;
@@ -40,6 +46,7 @@ header {
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 30px 40px;
+	text-align: center;
 }
 
 .card-header::after {
@@ -75,7 +82,7 @@ header {
 
 .btn {
 	border: none;
-	background-color: hsl(360, 91%, 36%);
+	background-color: #03a062;
 	border-radius: 25px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
 		0px;
