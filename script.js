@@ -1,12 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// declare variables in global memory to store user choices for password attributes
+// declare variables in global memory to store user choices for password attribute booleans
 var pwLength;
 var lowCase;
 var upCase;
 var numbers;
 var special;
+
+var lowCaseString = 'abcdefghijklmnopqrstuvwxyz';
+var upCaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var numbersString = '1234567890';
+var specialString = '!@#$%^&*()_+';
+
 
 // define parent function that contains the functions that let user set parameters for password
 function userInput() {
@@ -59,7 +65,7 @@ function userInput() {
       return;
     }
   }
-  // execute the 5 functions defined above
+  // execute functions defined above
   getLength();
   confirmAll();
 }
@@ -78,10 +84,14 @@ console.log('Using numbers? ' + numbers);
 console.log('Using specials? ' + special);
 
 
+// make string of possible password values based on user input
+var passwordPoss = ((lowCase) ? lowCaseString : '')
+  + ((upCase) ? upCaseString : '')
+  + ((numbers) ? numbersString : '')
+  + ((special) ? specialString : '');
 
-
-
-
+  // testing password string
+console.log('PW possible string: ' + passwordPoss);
 
 
 // Write password to the #password input
@@ -106,22 +116,22 @@ function generatePassword () {
 
 
 
-// Prompt user to choose password attributes
+// Prompt user to choose password attributes              DONE
   // ATTRIBUTES
-    // 1) Length of password prompt
-    // 2) Contains lowercase? confirm
-    // 3) Contains uppercase? confirm
-    // 4) Contains numbers? confirm
-    // 5) Contains special characters? confirm
+    // 1) Length of password prompt                       DONE
+    // 2) Contains lowercase? confirm                     DONE
+    // 3) Contains uppercase? confirm                     DONE
+    // 4) Contains numbers? confirm                       DONE
+    // 5) Contains special characters? confirm            DONE
 
   // VALIDATIONS
-    // 1) Password length at least 8, no more that 128
-    // 2) User must pick at least 1 of the 4 types of characters
-      // If either of these is not met,  notify user why and restart the prompts
+    // 1) Password length at least 8, no more that 128    DONE
+    // 2) User must pick at least 1 of the 4 types of characters    DONE
+      // If either of these is not met,  notify user why and restart the prompts    DONE
 
-// Store their choices in variables as boolean types
+// Store their choices in variables as boolean types    DONE
 
-
+// Generate arrays for each of the four password data types
 
 
 
