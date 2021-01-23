@@ -2,14 +2,14 @@
 var generateBtn = document.querySelector("#generate");
 
 // declare variables in global memory to store user choices for password attributes
-
 var pwLength;
 var lowCase;
 var upCase;
 var numbers;
 var special;
 
- 
+// define parent function that contains the functions that let user set parameters for password
+function userInput() {
   // prompt user for desired password length and validate for number between 8 and 128
   function getLength() {
     pwLength = prompt('How many characters do you want your password to be? \r\n(must be between 8 and 128)');
@@ -21,32 +21,52 @@ var special;
     }
   }
 
-  // get user input to confirm using lowercase
-  function confirmLowCase() {
-    lowCase = confirm('Would you like to use lowercase letters?');
+  function confirmAll() {
+    // define function that gets user input to confirm using lowercase
+    function confirmLowCase() {
+      lowCase = confirm('Would you like to use lowercase letters?');
+      }
+
+    // define function that gets user input to confirm using uppercase
+    function confirmUpCase() {
+      upCase = confirm('Would you like to use uppercase letters?');
     }
 
-  // get user input to confirm using uppercase
-  function confirmUpCase() {
-    upCase = confirm('Would you like to use uppercase letters?');
+    // define function that gets user input to confirm using numbers
+    function confirmNumbers () {
+      numbers = confirm('Would you like to use numbers?');
+    }
+
+    // define function that gets user input to confirm using special characters
+    function confirmSpecial() {
+      special = confirm('Would you like to use special characters?');
+    }
+
+    // execute the four functions defined above
+    confirmLowCase();
+    confirmUpCase();
+    confirmNumbers();
+    confirmSpecial();
+
+    // validate user input to ensure at least one data type is selected
+    if (lowCase === false
+      && upCase === false
+      && numbers === false
+      && special === false) {
+        alert('You must select at least one data type for your password.');
+        confirmAll();
+    } else {
+      return;
+    }
   }
+  // execute the 5 functions defined above
+  getLength();
+  confirmAll();
+}
 
-  // get user input to confirm using numbers
-  function confirmNumbers () {
-    numbers = confirm('Would you like to use numbers?');
-  }
+// execute the userInput function to set password attributes
+userInput();
 
-  // get user input to confirm using special characters
-  function confirmSpecial() {
-    special = confirm('Would you like to use special characters?');
-  }
-
-
-getLength();
-confirmLowCase();
-confirmUpCase();
-confirmNumbers();
-confirmSpecial();
 
 
 
