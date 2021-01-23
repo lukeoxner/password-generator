@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // declare variables in global memory to store user choices for password attribute booleans
+var password;
 var pwLength;
 var lowCase;
 var upCase;
@@ -73,30 +74,21 @@ function userInput() {
 // execute the userInput function to set password attributes
 userInput();
 
-
-
-
-// testing my code with console.log
-console.log('Desired password length: ' + pwLength);
-console.log('Using lowercase? ' + lowCase);
-console.log('Using uppercase? ' + upCase);
-console.log('Using numbers? ' + numbers);
-console.log('Using specials? ' + special);
-
-
 // make string of possible password values based on user input
-var passwordPoss = ((lowCase) ? lowCaseString : '')
+var passwordPossibles = ((lowCase) ? lowCaseString : '')
   + ((upCase) ? upCaseString : '')
   + ((numbers) ? numbersString : '')
   + ((special) ? specialString : '');
 
-  // testing password string
-console.log('PW possible string: ' + passwordPoss);
-
+function generatePassword() {
+  for (var i = 0; i < pwLength; i++)
+  password = password + passwordPossibles.charAt(Math.floor(Math.random() * passwordPossibles.length));
+}
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();    // generates password and stores it in variable 'password'
+  password = '';
+  generatePassword();
   var passwordText = document.querySelector("#password"); // selects the textarea element with id 'password' and assigns it as the value of the variable 'passwordText'
 
   passwordText.value = password;  // declares the value of passwordText variable equals the value of password variable
@@ -109,12 +101,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-function generatePassword () {
-  return 'its a password';    // tester code (temporary)
-}
-
-
-
+ // PSEUDOCODE NOTES SECTION
 
 // Prompt user to choose password attributes              DONE
   // ATTRIBUTES
@@ -131,7 +118,7 @@ function generatePassword () {
 
 // Store their choices in variables as boolean types    DONE
 
-// Generate arrays for each of the four password data types
+// Generate arrays for each of the four password data types     DONE
 
 
 
