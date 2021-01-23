@@ -6,7 +6,7 @@ var generateBtn = document.querySelector("#generate");
 var pwLength;
 var lowCase;
 var upCase;
-var number;
+var numbers;
 var special;
 
  
@@ -21,21 +21,41 @@ var special;
     }
   }
 
-  // get user input for using lowercase
+  // get user input to confirm using lowercase
   function confirmLowCase() {
     lowCase = confirm('Would you like to use lowercase letters?');
     }
 
+  // get user input to confirm using uppercase
+  function confirmUpCase() {
+    upCase = confirm('Would you like to use uppercase letters?');
+  }
+
+  // get user input to confirm using numbers
+  function confirmNumbers () {
+    numbers = confirm('Would you like to use numbers?');
+  }
+
+  // get user input to confirm using special characters
+  function confirmSpecial() {
+    special = confirm('Would you like to use special characters?');
+  }
 
 
 getLength();
 confirmLowCase();
+confirmUpCase();
+confirmNumbers();
+confirmSpecial();
 
 
 
 // testing my code with console.log
-console.log(pwLength);
-console.log(lowCase);
+console.log('Desired password length: ' + pwLength);
+console.log('Using lowercase? ' + lowCase);
+console.log('Using uppercase? ' + upCase);
+console.log('Using numbers? ' + numbers);
+console.log('Using specials? ' + special);
 
 
 
