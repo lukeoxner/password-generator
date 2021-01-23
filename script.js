@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// declare variables in global memory to store user choices for password attribute booleans
+// declare variables in global memory
 var password;
 var pwLength;
 var lowCase;
@@ -9,6 +9,7 @@ var upCase;
 var numbers;
 var special;
 
+// these strings contain all possible characters that can be used in making the password
 var lowCaseString = 'abcdefghijklmnopqrstuvwxyz';
 var upCaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var numbersString = '1234567890';
@@ -27,7 +28,7 @@ function userInput() {
       getLength();
     }
   }
-
+  // define parent function for all the individual character type confirmation functions
   function confirmAll() {
     // define function that gets user input to confirm using lowercase
     function confirmLowCase() {
@@ -80,18 +81,19 @@ var passwordPossibles = ((lowCase) ? lowCaseString : '')
   + ((numbers) ? numbersString : '')
   + ((special) ? specialString : '');
 
+  // define the function that uses a for loop to generate a random password from the possible characters defined above
 function generatePassword() {
   for (var i = 0; i < pwLength; i++)
   password = password + passwordPossibles.charAt(Math.floor(Math.random() * passwordPossibles.length));
 }
 
-// Write password to the #password input
+// define parent function that is executed when the user clicks the Generate Password button
 function writePassword() {
   password = '';
   generatePassword();
   var passwordText = document.querySelector("#password"); // selects the textarea element with id 'password' and assigns it as the value of the variable 'passwordText'
 
-  passwordText.value = password;  // declares the value of passwordText variable equals the value of password variable
+  passwordText.value = password;  // sets the value of passwordText variable equal to the value of password variable so it can be printed for the user
 
 }
 
@@ -120,6 +122,4 @@ generateBtn.addEventListener("click", writePassword);
 
 // Generate arrays for each of the four password data types     DONE
 
-
-
-// Use generatePassword function to make the password using user input for attributes
+// Use generatePassword function to make the password using user input for attributes   DONE
