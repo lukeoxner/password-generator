@@ -9,19 +9,33 @@ var upCase;
 var number;
 var special;
 
-// prompt user for desired password length and validate for number between 8 and 128
-function getLength() {
-  var pwLength = prompt('How many characters do you want your password to be? \r\n(must be between 8 and 128)');
-  if (pwLength >= 8 && pwLength <= 128) {
-    return pwLength;
-  } else {
-    alert('Please specify a length between 8 and 128.');
-    getLength();
+ 
+  // prompt user for desired password length and validate for number between 8 and 128
+  function getLength() {
+    pwLength = prompt('How many characters do you want your password to be? \r\n(must be between 8 and 128)');
+    if (pwLength >= 8 && pwLength <= 128) {
+      return pwLength;
+    } else {
+      alert('Please specify a length between 8 and 128.');
+      getLength();
+    }
   }
 
-}
+  // get user input for using lowercase
+  function confirmLowCase() {
+    lowCase = confirm('Would you like to use lowercase letters?');
+    }
 
-console.log(getLength());
+
+
+getLength();
+confirmLowCase();
+
+
+
+// testing my code with console.log
+console.log(pwLength);
+console.log(lowCase);
 
 
 
