@@ -2,11 +2,27 @@
 var generateBtn = document.querySelector("#generate");
 
 // declare variables in global memory to store user choices for password attributes
+
+var pwLength;
 var lowCase;
 var upCase;
 var number;
 var special;
-var pwLength;
+
+// prompt user for desired password length and validate for number between 8 and 128
+function getLength() {
+  var pwLength = prompt('How many characters do you want your password to be? \r\n(must be between 8 and 128)');
+  if (pwLength >= 8 && pwLength <= 128) {
+    return pwLength;
+  } else {
+    alert('Please specify a length between 8 and 128.');
+    getLength();
+  }
+
+}
+
+console.log(getLength());
+
 
 
 
@@ -30,5 +46,29 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword () {
-  return 'its a password';
+  return 'its a password';    // tester code (temporary)
 }
+
+
+
+
+// Prompt user to choose password attributes
+  // ATTRIBUTES
+    // 1) Length of password prompt
+    // 2) Contains lowercase? confirm
+    // 3) Contains uppercase? confirm
+    // 4) Contains numbers? confirm
+    // 5) Contains special characters? confirm
+
+  // VALIDATIONS
+    // 1) Password length at least 8, no more that 128
+    // 2) User must pick at least 1 of the 4 types of characters
+      // If either of these is not met,  notify user why and restart the prompts
+
+// Store their choices in variables as boolean types
+
+
+
+
+
+// Use generatePassword function to make the password using user input for attributes
